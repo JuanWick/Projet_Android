@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SchoolBoyRun</string>
+    <string name="ask_name">"Comment doit-on t'appeler ?"</string>
+    <string name="greeting">"Content de te voir "</string>
+    <string name="username">Nom</string>
+    <string name="lets_start">C\'est partie !</string>
+    <string name="Cancel">Annuler</string>
+    <string name="missing_name">Le nom est manquat !</string>
+</resources>

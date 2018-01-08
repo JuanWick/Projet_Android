@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.esgi.schoolboyrun.fragment.MenuFragment"
+    android:orientation="vertical"
+    >
+    <Button
+        android:id="@+id/fragment_menu_play_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Jouer"/>
+    <Button
+        android:id="@+id/fragment_menu_score_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="30dp"
+
+        android:text="Scores"/>
+    <Button
+        android:id="@+id/fragment_menu_score_google_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="30dp"
+        android:text="Scores Google Play"/>
+    <Button
+        android:id="@+id/fragment_menu_param_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="30dp"
+        android:text="Paramètres"/>
+
+</LinearLayout>

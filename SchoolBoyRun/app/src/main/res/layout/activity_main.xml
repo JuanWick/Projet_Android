@@ -5,53 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fr.esgi.schoolboyrun.MainActivity">
+    tools:context="fr.esgi.schoolboyrun.activity.MainActivity"
+    android:background="@color/pink">
 
-    <TextView
-        android:id="@+id/activity_main_greeting_txt"
+    <FrameLayout
+        android:id="@+id/user_fragment"
+        android:layout_height="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/activity_main_input"
+        >
+    </FrameLayout>
+    <fragment
+        android:id="@+id/menu_fragment"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/activity_main_rename_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="30dp"
-        android:layout_marginTop="20dp"
-        android:text="Changer de nom"/>
-    <Button
-        android:id="@+id/activity_main_play_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="30dp"
-        android:layout_marginTop="20dp"
-        android:text="Jouer"/>
-    <Button
-        android:id="@+id/activity_main_score_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="30dp"
-
-        android:text="Scores"/>
-    <Button
-        android:id="@+id/activity_main_score_google_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="30dp"
-        android:text="Scores Google Play"/>
-    <Button
-        android:id="@+id/activity_main_param_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="30dp"
-        android:text="Paramètres"/>
+        android:name="fr.esgi.schoolboyrun.fragment.MenuFragment">
+    </fragment>
 
 </LinearLayout>
