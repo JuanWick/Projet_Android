@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">SchoolBoyRun</string>
     <string name="ask_name">"Comment doit-on t'appeler ?"</string>
-    <string name="greeting">"Content de te voir "</string>
+    <string name="greeting">"Hey "</string>
     <string name="username">Nom</string>
     <string name="lets_start">C\'est partie !</string>
     <string name="Cancel">Annuler</string>

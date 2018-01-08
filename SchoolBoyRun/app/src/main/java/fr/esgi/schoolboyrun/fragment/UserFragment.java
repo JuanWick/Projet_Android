@@ -59,7 +59,7 @@ public class UserFragment extends Fragment {
         if(null == userName || userName.isEmpty()){
             iUserFragment.getUserName();
         } else {
-            mUserNameTxt.setText(getString(R.string.greeting)+userName);
+            mUserNameTxt.setText(getString(R.string.greeting)+userName+"!");
         }
 
         Button mUserEditBtn = (Button) getView().findViewById(R.id.fragment_user_edit_btn);
