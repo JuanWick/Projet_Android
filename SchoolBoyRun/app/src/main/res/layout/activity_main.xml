@@ -14,11 +14,10 @@
         android:layout_width="match_parent"
         >
     </FrameLayout>
-    <fragment
+    <FrameLayout
         android:id="@+id/menu_fragment"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:name="fr.esgi.schoolboyrun.fragment.MenuFragment">
-    </fragment>
+        android:layout_width="match_parent">
+    </FrameLayout>
 
 </LinearLayout>
