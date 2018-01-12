@@ -1,16 +1,14 @@
-package fr.esgi.schoolboyrun.fragment;
+package fr.esgi.schoolboyrun.fragments;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
-import android.view.View;
 
 import fr.esgi.schoolboyrun.R;
-import fr.esgi.schoolboyrun.interfaces.iAskNameDialogFragment;
+import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
 
 /**
  * Created by JUAN_work on 07/01/2018.
@@ -18,7 +16,7 @@ import fr.esgi.schoolboyrun.interfaces.iAskNameDialogFragment;
 
 public class AskNameDialogFragment extends DialogFragment {
 
-    iAskNameDialogFragment iAskNameDialogFragment;
+    fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment IAskNameDialogFragment;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -26,7 +24,7 @@ public class AskNameDialogFragment extends DialogFragment {
         builder.setMessage(R.string.ask_name)
                 .setPositiveButton(R.string.lets_start, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        iAskNameDialogFragment.onDialogPositiveClick(getDialog());
+                        IAskNameDialogFragment.onDialogPositiveClick(getDialog());
                     }
                 });
         builder.setView(R.layout.dialog_ask_name);
@@ -43,8 +41,9 @@ public class AskNameDialogFragment extends DialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(context instanceof iAskNameDialogFragment){
-            iAskNameDialogFragment = (iAskNameDialogFragment) context;
+        if(context instanceof IAskNameDialogFragment){
+            IAskNameDialogFragment = (IAskNameDialogFragment) context;
         }
     }
 }
+

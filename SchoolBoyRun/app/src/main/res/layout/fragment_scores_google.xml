@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.esgi.schoolboyrun.fragments.SettingsFragment">
+    tools:context="fr.esgi.schoolboyrun.fragments.ScoresGoogleFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="PARAM" />
+        android:text="SCORE GOOGLE" />
 
 </FrameLayout>

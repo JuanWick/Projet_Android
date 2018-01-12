@@ -1,9 +1,8 @@
-package fr.esgi.schoolboyrun.activity;
+package fr.esgi.schoolboyrun.activities;
 
 import android.app.Dialog;
 import android.content.res.Configuration;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.SharedPreferences;
@@ -15,21 +14,28 @@ import android.widget.EditText;
 
 import java.util.Locale;
 
+import butterknife.ButterKnife;
 import fr.esgi.schoolboyrun.R;
-import fr.esgi.schoolboyrun.fragment.AskNameDialogFragment;
-import fr.esgi.schoolboyrun.fragment.MenuFragment;
-import fr.esgi.schoolboyrun.fragment.UserFragment;
-import fr.esgi.schoolboyrun.interfaces.iAskNameDialogFragment;
-import fr.esgi.schoolboyrun.interfaces.iUserFragment;
+import fr.esgi.schoolboyrun.data.impl.UserRepository;
+import fr.esgi.schoolboyrun.fragments.AskNameDialogFragment;
+import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
+import fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment;
+import fr.esgi.schoolboyrun.fragments.MenuFragment;
+import fr.esgi.schoolboyrun.fragments.UserFragment;
+import fr.esgi.schoolboyrun.models.User;
+import io.realm.Realm;
 
-public class MainActivity extends AppCompatActivity implements iUserFragment, iAskNameDialogFragment {
+public class MainActivity extends AppCompatActivity implements IUserFragment, IAskNameDialogFragment {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-             /* check if custom local exist in Pref file */
+        /** initialisation de la persistance de donnée **/
+        Realm.init(this);
+
+        /** check if custom local exist in Pref file **/
         String customLocal = checkPrefValue("local");
 
         if(!customLocal.isEmpty()){
@@ -79,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements iUserFragment, iA
     }
 
     private void setLastUserName(String name) {
+        UserRepository userRepository = new UserRepository();
+        userRepository.addUser(new User(name));
+
         SharedPreferences sharedPreferences = this.getSharedPreferences("currentUser",MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putString("currentUser", name);

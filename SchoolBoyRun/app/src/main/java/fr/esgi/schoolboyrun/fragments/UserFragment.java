@@ -1,11 +1,9 @@
-package fr.esgi.schoolboyrun.fragment;
+package fr.esgi.schoolboyrun.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import fr.esgi.schoolboyrun.R;
-import fr.esgi.schoolboyrun.interfaces.iUserFragment;
+import fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment;
 
 public class UserFragment extends Fragment {
     private static final String ARG_PARAM1 = "userName";
     private String userName;
-    private iUserFragment iUserFragment;
+    private fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment IUserFragment;
 
     public UserFragment() {
     }
@@ -57,7 +55,7 @@ public class UserFragment extends Fragment {
         TextView mUserNameTxt = (TextView) getView().findViewById(R.id.fragment_user_name_txt);
 
         if(null == userName || userName.isEmpty()){
-            iUserFragment.getUserName();
+            IUserFragment.getUserName();
         } else {
             mUserNameTxt.setText(getString(R.string.greeting)+userName+"!");
         }
@@ -67,7 +65,7 @@ public class UserFragment extends Fragment {
         mUserEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iUserFragment.getUserName();
+                IUserFragment.getUserName();
             }
         });
     }
@@ -75,14 +73,15 @@ public class UserFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof iUserFragment) {
-            iUserFragment = (iUserFragment) context;
+        if (context instanceof IUserFragment) {
+            IUserFragment = (IUserFragment) context;
         }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        iUserFragment = null;
+        IUserFragment = null;
     }
 }
+

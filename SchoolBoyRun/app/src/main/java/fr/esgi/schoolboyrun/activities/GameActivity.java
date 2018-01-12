@@ -1,4 +1,4 @@
-package fr.esgi.schoolboyrun.activity;
+package fr.esgi.schoolboyrun.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

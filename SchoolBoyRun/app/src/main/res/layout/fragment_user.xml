@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.esgi.schoolboyrun.fragment.UserFragment"
+    tools:context="fr.esgi.schoolboyrun.fragments.UserFragment"
     android:orientation="horizontal">
     <RelativeLayout
         android:layout_width="wrap_content"
