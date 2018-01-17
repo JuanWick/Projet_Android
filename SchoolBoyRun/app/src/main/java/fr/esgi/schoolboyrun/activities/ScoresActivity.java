@@ -6,7 +6,7 @@ import android.os.Bundle;
 import fr.esgi.schoolboyrun.R;
 import fr.esgi.schoolboyrun.fragments.ScoresFragment;
 
-import static fr.esgi.schoolboyrun.helpers.viewUtil.initFragment;
+import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
 
 public class ScoresActivity extends AppCompatActivity {
 

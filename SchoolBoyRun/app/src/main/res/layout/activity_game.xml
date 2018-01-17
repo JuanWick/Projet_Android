@@ -4,11 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.esgi.schoolboyrun.activities.GameActivity">
+    tools:context="fr.esgi.schoolboyrun.activities.GameActivity"
+    android:orientation="vertical">
 
 <android.support.v7.widget.AppCompatTextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="Game Activity"
+    android:layout_height="wrap_content"
+    android:text="Game Activity WIP"
     android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Veuillez entrer un score :"/>
+    <EditText
+        android:id="@+id/activity_game_score_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:inputType="numberSigned"/>
+    <Button
+        android:id="@+id/activity_game_end_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Terminer la partie"/>
 </LinearLayout>

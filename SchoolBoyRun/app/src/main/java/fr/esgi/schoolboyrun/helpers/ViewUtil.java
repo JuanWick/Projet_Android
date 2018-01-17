@@ -17,12 +17,7 @@ import fr.esgi.schoolboyrun.fragments.ScoresGoogleFragment;
  * Created by JUAN_work on 08/01/2018.
  */
 
-public class viewUtil extends AppCompatActivity {
-
-    public static String checkPrefValue(Context context, String key){
-        SharedPreferences sharedPreferences = context.getSharedPreferences(key,MODE_PRIVATE);
-        return sharedPreferences.getString(key,"");
-    }
+public class ViewUtil extends AppCompatActivity {
 
     public static boolean isDualPane(Activity activity){
         View customView = activity.findViewById(R.id.custom_fragment);

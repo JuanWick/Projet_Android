@@ -12,15 +12,14 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import fr.esgi.schoolboyrun.R;
 import fr.esgi.schoolboyrun.activities.ScoresActivity;
 import fr.esgi.schoolboyrun.activities.GameActivity;
 import fr.esgi.schoolboyrun.activities.ScoresGoogleActivity;
 import fr.esgi.schoolboyrun.activities.SettingsActivity;
 
-import static fr.esgi.schoolboyrun.helpers.viewUtil.initFragment;
-import static fr.esgi.schoolboyrun.helpers.viewUtil.isDualPane;
+import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
+import static fr.esgi.schoolboyrun.helpers.ViewUtil.isDualPane;
 
 public class MenuFragment extends Fragment {
     @BindView(R.id.fragment_menu_play_btn) Button mPlayButton;

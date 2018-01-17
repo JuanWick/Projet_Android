@@ -1,22 +1,35 @@
 package fr.esgi.schoolboyrun.fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import fr.esgi.schoolboyrun.R;
+import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
 import fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment;
+import fr.esgi.schoolboyrun.manager.UserManager;
 
-public class UserFragment extends Fragment {
+public class UserFragment extends Fragment implements IAskNameDialogFragment {
     private static final String ARG_PARAM1 = "userName";
     private String userName;
     private fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment IUserFragment;
+    private UserManager userManager;
+    @BindView(R.id.fragment_user_name_txt) TextView mUserNameTxt;
+    @BindView(R.id.fragment_user_edit_btn)  Button mUserEditBtn;
+    @BindString(R.string.greeting) String GREETING;
 
     public UserFragment() {
     }
@@ -52,20 +65,18 @@ public class UserFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        TextView mUserNameTxt = (TextView) getView().findViewById(R.id.fragment_user_name_txt);
+        /** initialisation de la library butterknife **/
+        ButterKnife.bind(this,getView());
+        userManager = UserManager.getCurrentUserManager();
 
-        if(null == userName || userName.isEmpty()){
-            IUserFragment.getUserName();
-        } else {
-            mUserNameTxt.setText(getString(R.string.greeting)+userName+"!");
+        if(null != userName && !userName.isEmpty()){
+            mUserNameTxt.setText(GREETING+userName+"!");
         }
-
-        Button mUserEditBtn = (Button) getView().findViewById(R.id.fragment_user_edit_btn);
 
         mUserEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IUserFragment.getUserName();
+                userManager.askUserName(getActivity());
             }
         });
     }
@@ -73,15 +84,26 @@ public class UserFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof IUserFragment) {
-            IUserFragment = (IUserFragment) context;
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        IUserFragment = null;
+    }
+
+    @Override
+    public void onDialogPositiveClick(Dialog dialog) {
+        Log.i("[UserFragment] > ","onDialogPositiveClick");
+
+        EditText mName = (EditText) dialog.findViewById(R.id.AskNameDialog_username);
+        Log.i("[UserFragment] > ","mName > "+mName);
+
+        userName = mName.getText().toString();
+
+        Log.i("[UserFragment] > ",userName);
+        if(!userName.isEmpty()){
+            mUserNameTxt.setText(GREETING+userName+"!");
+        }
     }
 }
 
