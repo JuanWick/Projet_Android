@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +20,7 @@ import fr.esgi.schoolboyrun.activities.GameActivity;
 import fr.esgi.schoolboyrun.activities.ScoresGoogleActivity;
 import fr.esgi.schoolboyrun.activities.SettingsActivity;
 
+import static android.app.Activity.RESULT_OK;
 import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
 import static fr.esgi.schoolboyrun.helpers.ViewUtil.isDualPane;
 
@@ -26,6 +29,7 @@ public class MenuFragment extends Fragment {
     @BindView(R.id.fragment_menu_score_btn) Button mScoreButton;
     @BindView(R.id.fragment_menu_param_btn) Button mParamButton;
     @BindView(R.id.fragment_menu_score_google_btn) Button mScoreGoogleButton;
+    private static int GAME_REQUEST_CODE = 33;
     private boolean mIsDualPane;
 
     public MenuFragment() {

@@ -17,16 +17,16 @@ public class Score extends RealmObject {
     private int score;
     @Required
     private Date date;
-    private User owner;
+    private String userName;
 
     public Score() {
     }
 
-    public Score(int id, int score, Date date, User owner) {
+    public Score(int id, int score, Date date, String userName) {
         this.id = id;
         this.score = score;
         this.date = date;
-        this.owner = owner;
+        this.userName = userName;
     }
 
     public int getId() {
@@ -53,11 +53,11 @@ public class Score extends RealmObject {
         this.date = date;
     }
 
-    public User getOwner() {
-        return owner;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
