@@ -1,5 +1,6 @@
 package fr.esgi.schoolboyrun.fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -19,6 +21,8 @@ import fr.esgi.schoolboyrun.activities.ScoresActivity;
 import fr.esgi.schoolboyrun.activities.GameActivity;
 import fr.esgi.schoolboyrun.activities.ScoresGoogleActivity;
 import fr.esgi.schoolboyrun.activities.SettingsActivity;
+import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
+import fr.esgi.schoolboyrun.manager.UserManager;
 
 import static android.app.Activity.RESULT_OK;
 import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;

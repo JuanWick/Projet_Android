@@ -70,13 +70,13 @@ public class UserManager {
         Log.i("[setLastUser]","APRES ADD");
 
 
-        user = userRepository.getUserByName(name);
+        currentUser = userRepository.getUserByName(name);
 
-        Log.i("[setLastUser]","APRES RECUP : " + user.getName());
+        Log.i("[setLastUser]","APRES RECUP : " + currentUser.getName());
 
 
         PrefUtil.addStringPrefValue(context, "currentUser", "currentUserName", name);
-        PrefUtil.addIntPrefValue(context, "currentUser", "currentUserId", user.getId());
+        PrefUtil.addIntPrefValue(context, "currentUser", "currentUserId", currentUser.getId());
 
         Log.i("[setLastUser]","FIN");
 

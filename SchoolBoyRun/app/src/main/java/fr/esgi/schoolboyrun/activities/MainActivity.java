@@ -1,9 +1,12 @@
 package fr.esgi.schoolboyrun.activities;
 
+import android.app.Dialog;
 import android.content.res.Configuration;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 
 
 import java.util.Locale;
@@ -11,6 +14,7 @@ import java.util.Locale;
 import fr.esgi.schoolboyrun.R;
 import fr.esgi.schoolboyrun.fragments.MenuFragment;
 import fr.esgi.schoolboyrun.fragments.UserFragment;
+import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
 import fr.esgi.schoolboyrun.manager.UserManager;
 import io.realm.Realm;
 
@@ -18,7 +22,7 @@ import static fr.esgi.schoolboyrun.helpers.PrefUtil.checkPrefValue;
 import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
 import static fr.esgi.schoolboyrun.manager.UserManager.getCurrentUserManager;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity  implements IAskNameDialogFragment{
 
     UserManager userManager;
 
@@ -49,5 +53,18 @@ public class MainActivity extends AppCompatActivity  {
 
         /** init MenuFragment **/
         initFragment(this,MenuFragment.newInstance(),R.id.menu_fragment);
+    }
+
+    @Override
+    public void onDialogPositiveClick(Dialog dialog) {
+        Log.i("[UserFragment] > ","onDialogPositiveClick");
+
+        EditText mName = (EditText) dialog.findViewById(R.id.AskNameDialog_username);
+        Log.i("[UserFragment] > ","mName > "+mName);
+
+        UserManager userManager = UserManager.getCurrentUserManager();
+
+        /** On met à jour le message de la home **/
+        initFragment(this,UserFragment.newInstance(userManager.getUserName()),R.id.user_fragment);
     }
 }

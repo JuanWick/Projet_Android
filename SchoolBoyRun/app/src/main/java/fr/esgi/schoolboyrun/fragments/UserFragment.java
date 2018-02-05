@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,9 @@ import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
 import fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment;
 import fr.esgi.schoolboyrun.manager.UserManager;
 
-public class UserFragment extends Fragment implements IAskNameDialogFragment {
+import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
+
+public class UserFragment extends Fragment {
     private static final String ARG_PARAM1 = "userName";
     private String userName;
     private fr.esgi.schoolboyrun.fragments.interfaces.IUserFragment IUserFragment;
@@ -91,19 +94,5 @@ public class UserFragment extends Fragment implements IAskNameDialogFragment {
         super.onDetach();
     }
 
-    @Override
-    public void onDialogPositiveClick(Dialog dialog) {
-        Log.i("[UserFragment] > ","onDialogPositiveClick");
-
-        EditText mName = (EditText) dialog.findViewById(R.id.AskNameDialog_username);
-        Log.i("[UserFragment] > ","mName > "+mName);
-
-        userName = mName.getText().toString();
-
-        Log.i("[UserFragment] > ",userName);
-        if(!userName.isEmpty()){
-            mUserNameTxt.setText(GREETING+userName+"!");
-        }
-    }
 }
 
