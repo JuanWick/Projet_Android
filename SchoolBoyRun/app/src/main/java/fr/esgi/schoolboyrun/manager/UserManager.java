@@ -54,8 +54,9 @@ public class UserManager {
         return "";
     }
 
-    public void askUserName(FragmentActivity fragment){
-        DialogFragment newFragment = new AskNameDialogFragment();
+    public void askUserName(FragmentActivity fragment, String from){
+        AskNameDialogFragment newFragment = new AskNameDialogFragment();
+        newFragment.setFrom(from);
         newFragment.show(fragment.getSupportFragmentManager(), "askName");
     }
 

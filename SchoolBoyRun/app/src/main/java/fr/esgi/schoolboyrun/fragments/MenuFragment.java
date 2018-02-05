@@ -70,8 +70,15 @@ public class MenuFragment extends Fragment {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gameIntent = new Intent(getActivity(), GameActivity.class);
-                startActivity(gameIntent);
+                UserManager userManager = UserManager.getCurrentUserManager();
+
+                if(userManager.checkUserIsSet()){
+                    Intent gameIntent = new Intent(getActivity(), GameActivity.class);
+                    startActivity(gameIntent);
+                } else {
+                    userManager.askUserName(getActivity(),"game");
+                }
+
             }
         });
 

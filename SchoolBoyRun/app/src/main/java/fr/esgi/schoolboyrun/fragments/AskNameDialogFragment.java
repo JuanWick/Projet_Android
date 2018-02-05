@@ -31,6 +31,11 @@ import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
 public class AskNameDialogFragment extends DialogFragment {
 
     private IAskNameDialogFragment iAskNameDialogFragment;
+    public String from;
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -44,7 +49,7 @@ public class AskNameDialogFragment extends DialogFragment {
                         UserManager.getCurrentUserManager().setLastUser(getActivity(),mName.getText().toString());
 
                  if(null != iAskNameDialogFragment){
-                     iAskNameDialogFragment.onDialogPositiveClick(getDialog());
+                     iAskNameDialogFragment.onDialogPositiveClick(getDialog(),from);
                  }
                     }
                 });

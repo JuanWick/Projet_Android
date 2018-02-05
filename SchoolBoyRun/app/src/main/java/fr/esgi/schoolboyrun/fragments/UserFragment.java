@@ -79,7 +79,7 @@ public class UserFragment extends Fragment {
         mUserEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userManager.askUserName(getActivity());
+                userManager.askUserName(getActivity(),"main");
             }
         });
     }

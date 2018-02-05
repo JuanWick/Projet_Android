@@ -1,6 +1,7 @@
 package fr.esgi.schoolboyrun.activities;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.res.Configuration;
 
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity  implements IAskNameDialogFr
     }
 
     @Override
-    public void onDialogPositiveClick(Dialog dialog) {
+    public void onDialogPositiveClick(Dialog dialog, String from) {
         Log.i("[UserFragment] > ","onDialogPositiveClick");
 
         EditText mName = (EditText) dialog.findViewById(R.id.AskNameDialog_username);
@@ -66,5 +67,10 @@ public class MainActivity extends AppCompatActivity  implements IAskNameDialogFr
 
         /** On met à jour le message de la home **/
         initFragment(this,UserFragment.newInstance(userManager.getUserName()),R.id.user_fragment);
+
+        if("game".equals(from)){
+            Intent gameIntent = new Intent(this, GameActivity.class);
+            startActivity(gameIntent);
+        }
     }
 }
