@@ -17,4 +17,5 @@
     <string name="Langue_anglais">English</string>
     <string name="Changement_langue">Language change</string>
     <string name="Changement_langue_restart">The change will take effect at the next startup.</string>
+    <string name="score_toast">Congratulations ! Your score is</string>
 </resources>

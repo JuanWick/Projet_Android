@@ -74,6 +74,8 @@ public class UserFragment extends Fragment {
 
         if(null != userName && !userName.isEmpty()){
             mUserNameTxt.setText(GREETING+userName+"!");
+        } else {
+            mUserNameTxt.setText(GREETING+"!");
         }
 
         mUserEditBtn.setOnClickListener(new View.OnClickListener() {

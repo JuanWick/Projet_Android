@@ -3,6 +3,7 @@ package fr.esgi.schoolboyrun.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
@@ -13,6 +14,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Logger;
 
+import fr.esgi.schoolboyrun.R;
 import fr.esgi.schoolboyrun.manager.ScoreManager;
 import fr.esgi.schoolboyrun.manager.UserManager;
 
@@ -35,7 +37,7 @@ public class GameActivity extends AndroidApplication {
 
         /** On récupère le score en cours dans le jeu **/
         t = new Timer();
-        t.schedule(new CheckScore(), 0, 1*10);
+        t.schedule(new CheckScore(), 0, 1);
     }
 
     class CheckScore extends TimerTask {
@@ -52,6 +54,7 @@ public class GameActivity extends AndroidApplication {
         scoreManager = new ScoreManager();
 
         scoreManager.saveScore(userManager.getUserName(), score, new Date());
+        Toast.makeText(this,getString(R.string.score_toast)+ " " + score + " ! ",Toast.LENGTH_LONG).show();
         Log.i("[GameActivity]","onPause > score > " + score);
     }
 }

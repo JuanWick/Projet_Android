@@ -19,4 +19,5 @@
     <string name="Langue_anglais">Anglais</string>
     <string name="Changement_langue">Changement de langue</string>
     <string name="Changement_langue_restart">Le changement prendra effet au prochain lancement de l\'application.</string>
+    <string name="score_toast">Bravo ! Ton score est de</string>
 </resources>
