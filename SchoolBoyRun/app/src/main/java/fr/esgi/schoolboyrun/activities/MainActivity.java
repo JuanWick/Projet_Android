@@ -10,6 +10,12 @@ import android.util.Log;
 import android.widget.EditText;
 
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.drive.Drive;
+
 import java.util.Locale;
 
 import fr.esgi.schoolboyrun.R;
@@ -19,6 +25,7 @@ import fr.esgi.schoolboyrun.fragments.interfaces.IAskNameDialogFragment;
 import fr.esgi.schoolboyrun.manager.UserManager;
 import io.realm.Realm;
 
+import static com.google.android.gms.auth.api.credentials.CredentialPickerConfig.Prompt.SIGN_IN;
 import static fr.esgi.schoolboyrun.helpers.PrefUtil.checkPrefValue;
 import static fr.esgi.schoolboyrun.helpers.ViewUtil.initFragment;
 import static fr.esgi.schoolboyrun.manager.UserManager.getCurrentUserManager;
@@ -26,6 +33,8 @@ import static fr.esgi.schoolboyrun.manager.UserManager.getCurrentUserManager;
 public class MainActivity extends AppCompatActivity  implements IAskNameDialogFragment{
 
     UserManager userManager;
+    int REQUEST_CODE_FOR_SIGN_IN = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,16 @@ public class MainActivity extends AppCompatActivity  implements IAskNameDialogFr
 
         /** initialisation de la persistance de donnée **/
         Realm.init(this);
+
+        /** google Api **/
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestEmail()
+//                .build();
+//
+//        GoogleSignInClient signInClient = GoogleSignIn.getClient(this, gso);
+//
+//        Intent signIntent = signInClient.getSignInIntent();
+//        startActivityForResult(signIntent, REQUEST_CODE_FOR_SIGN_IN);
 
         /** check if custom local exist in Pref file **/
         String customLocal = checkPrefValue(this,"local","local");

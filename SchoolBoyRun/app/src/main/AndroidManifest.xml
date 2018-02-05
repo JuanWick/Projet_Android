@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".activities.GameActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".activities.ScoresActivity"
             android:screenOrientation="portrait" />
