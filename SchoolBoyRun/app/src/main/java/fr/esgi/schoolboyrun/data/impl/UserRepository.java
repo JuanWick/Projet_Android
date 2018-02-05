@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.List;
 
 import fr.esgi.schoolboyrun.data.IUserRepository;
+import fr.esgi.schoolboyrun.models.Score;
 import fr.esgi.schoolboyrun.models.User;
 import io.realm.Realm;
 
@@ -18,6 +19,16 @@ public class UserRepository implements IUserRepository {
         Log.i("[UserRepository]","ADD : "+user.getName());
 
         Realm realm = Realm.getDefaultInstance();
+
+        Number currentIdNum = realm.where(User.class).max("id");
+        int nextId;
+        if(currentIdNum == null) {
+            nextId = 1;
+        } else {
+            nextId = currentIdNum.intValue() + 1;
+        }
+        user.setId(nextId);
+
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();

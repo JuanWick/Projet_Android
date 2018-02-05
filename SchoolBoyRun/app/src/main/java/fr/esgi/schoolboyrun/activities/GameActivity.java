@@ -35,7 +35,7 @@ public class GameActivity extends AndroidApplication {
 
         /** On récupère le score en cours dans le jeu **/
         t = new Timer();
-        t.schedule(new CheckScore(), 0, 1*100);
+        t.schedule(new CheckScore(), 0, 1*10);
     }
 
     class CheckScore extends TimerTask {

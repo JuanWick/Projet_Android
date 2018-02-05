@@ -2,8 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.esgi.schoolboyrun.fragments.ScoresFragment">
+    tools:context="fr.esgi.schoolboyrun.fragments.ScoresFragment"
+    android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Liste des Scores"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/secondaryDarkColor"
+        android:textSize="30dp"/>
     <ListView
         android:id="@+id/scorelist"
         android:layout_width="match_parent"

@@ -51,18 +51,14 @@ public class ScoreAdapter extends ArrayAdapter<Score> {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View row = inflater.inflate(R.layout.list_raw_score,null);
 
-        TextView dateListView = (TextView) row.findViewById(R.id.txt_score_date);
         TextView userNameListView = (TextView) row.findViewById(R.id.txt_score_username);
         TextView valueListView = (TextView) row.findViewById(R.id.txt_score_value);
 
 
         Score scoreCurrent = getItem(position);
-
-        userNameListView.setText(scoreCurrent.getUserName());
-        valueListView.setText(String.valueOf(scoreCurrent.getScore()));
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-        dateListView.setText(simpleDateFormat.format(scoreCurrent.getDate()));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy hh:mm");
+        userNameListView.setText("Par " + scoreCurrent.getUserName() + " le " + simpleDateFormat.format(scoreCurrent.getDate()));
+        valueListView.setText(String.valueOf(scoreCurrent.getScore()) + " sauts");
 
         return row;
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/txt_score_value"
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        android:text="Score"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical|right"/>
+
+    <TextView
+        android:id="@+id/txt_score_username"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical|right"
+        android:text="User"
+        android:textSize="15dp"
+        android:layout_marginRight="15dp"/>
+</LinearLayout>
