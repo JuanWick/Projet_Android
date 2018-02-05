@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Liste des Scores"
+        android:text="@string/liste_des_scores"
         android:textAlignment="center"
         android:layout_marginTop="10dp"
         android:textColor="@color/secondaryDarkColor"

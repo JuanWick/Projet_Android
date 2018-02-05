@@ -15,7 +15,7 @@
 
 
         android:layout_marginTop="80dp"
-        android:text="Jouer"
+        android:text="@string/jouer"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
 
@@ -28,7 +28,7 @@
         android:layout_marginTop="80dp"
 
 
-        android:text="Scores"
+        android:text="@string/scores"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
 
@@ -42,7 +42,7 @@
         android:layout_marginTop="5dp"
 
 
-        android:text="Scores Google Play"
+        android:text="@string/scores_google_play"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
 
@@ -56,7 +56,7 @@
         android:layout_marginTop="5dp"
 
 
-        android:text="Paramètres"
+        android:text="@string/param_tres"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
 

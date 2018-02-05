@@ -9,4 +9,9 @@
     <string name="lets_start">C\'est partie !</string>
     <string name="Cancel">Annuler</string>
     <string name="missing_name">Le nom est manquant !</string>
+    <string name="jouer">Jouer</string>
+    <string name="scores">Scores</string>
+    <string name="scores_google_play">Scores Google Play</string>
+    <string name="param_tres">Paramètres</string>
+    <string name="liste_des_scores">Liste des Scores</string>
 </resources>

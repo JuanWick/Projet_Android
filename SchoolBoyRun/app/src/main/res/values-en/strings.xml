@@ -7,4 +7,9 @@
     <string name="lets_start">Let\'s start !</string>
     <string name="Cancel">Cancel</string>
     <string name="missing_name">Name is missing !</string>
+    <string name="jouer">Play</string>
+    <string name="scores">Scores</string>
+    <string name="scores_google_play">Google Play Scores</string>
+    <string name="param_tres">Settings</string>
+    <string name="liste_des_scores">List of Scores</string>
 </resources>
