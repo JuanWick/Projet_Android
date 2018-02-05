@@ -41,8 +41,6 @@ public class ScoresFragment extends Fragment {
         ScoreManager scoreManager = new ScoreManager();
         List<Score> scores = scoreManager.getAllScores();
 
-        Log.i("[ScoresFragment]","LE NOMBRE : "+scores.size());
-
         /** On configure l'adapter **/
         ScoreAdapter scoreAdapter = new ScoreAdapter(this.getActivity(),android.R.layout.simple_list_item_1,scores);
 

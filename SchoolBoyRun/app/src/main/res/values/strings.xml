@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">SchoolBoyRun</string>
-    <string name="greeting">"Hi "</string>
-    <string name="ask_name">What\'s your name ?</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="greeting">Hey </string>
+    <string name="ask_name">Comment doit-on t\'appeler ?</string>
     <string name="username">Nom</string>
     <string name="lets_start">C\'est partie !</string>
     <string name="Cancel">Annuler</string>
@@ -23,4 +20,5 @@
     <string name="appwidget_text">Votre score max. à SchoolBoyRun est de </string>
     <string name="add_widget">Add widget</string>
     <string name="start">Lancer SchoolBoyRun !</string>
+    <string name="sauts">sauts</string>
 </resources>

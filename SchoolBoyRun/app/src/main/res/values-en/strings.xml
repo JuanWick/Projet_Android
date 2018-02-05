@@ -20,4 +20,5 @@
     <string name="score_toast">Congratulations ! Your score is</string>
     <string name="appwidget_text">"The high score at SchoolBoyRun is "</string>
     <string name="start">Start SchoolBoyRun !</string>
+    <string name="sauts">jumps</string>
 </resources>

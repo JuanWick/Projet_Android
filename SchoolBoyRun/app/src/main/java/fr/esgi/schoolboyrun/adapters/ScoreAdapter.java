@@ -58,7 +58,7 @@ public class ScoreAdapter extends ArrayAdapter<Score> {
         Score scoreCurrent = getItem(position);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy hh:mm");
         userNameListView.setText("Par " + scoreCurrent.getUserName() + " le " + simpleDateFormat.format(scoreCurrent.getDate()));
-        valueListView.setText(String.valueOf(scoreCurrent.getScore()) + " sauts");
+        valueListView.setText(String.valueOf(scoreCurrent.getScore()) + " " + getContext().getString(R.string.sauts));
 
         return row;
     }
