@@ -12,4 +12,9 @@
     <string name="scores_google_play">Scores Google Play</string>
     <string name="param_tres">Paramètres</string>
     <string name="liste_des_scores">Liste des Scores</string>
+    <string name="choix_de_la_langue">Choix de la langue</string>
+    <string name="Langue_français">Français</string>
+    <string name="Langue_anglais">Anglais</string>
+    <string name="Changement_langue">Changement de langue</string>
+    <string name="Changement_langue_restart">Le changement prendra effet au prochain lancement de l\'application.</string>
 </resources>

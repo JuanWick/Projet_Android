@@ -1,12 +1,41 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.esgi.schoolboyrun.fragments.SettingsFragment">
+    tools:context="fr.esgi.schoolboyrun.fragments.SettingsFragment"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/param_tres"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/secondaryDarkColor"
+        android:textSize="30dp"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PARAM" />
+        android:layout_height="wrap_content"
+        android:text="@string/choix_de_la_langue"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"/>
 
-</FrameLayout>
+    <RadioGroup
+        android:id="@+id/radioGroup_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+
+        <RadioButton
+        android:id="@+id/radio_french"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Langue_français" />
+
+        <RadioButton
+        android:id="@+id/radio_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Langue_anglais" />
+    </RadioGroup>
+</LinearLayout>

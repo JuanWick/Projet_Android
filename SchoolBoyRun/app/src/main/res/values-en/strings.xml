@@ -12,4 +12,9 @@
     <string name="scores_google_play">Google Play Scores</string>
     <string name="param_tres">Settings</string>
     <string name="liste_des_scores">List of Scores</string>
+    <string name="choix_de_la_langue">Choice of language</string>
+    <string name="Langue_français">French</string>
+    <string name="Langue_anglais">English</string>
+    <string name="Changement_langue">Language change</string>
+    <string name="Changement_langue_restart">The change will take effect at the next startup.</string>
 </resources>
