@@ -1,6 +1,7 @@
 package fr.esgi.schoolboyrun.manager;
 
 import java.util.Date;
+import java.util.List;
 
 import fr.esgi.schoolboyrun.data.impl.ScoreRepository;
 import fr.esgi.schoolboyrun.data.impl.UserRepository;
@@ -25,5 +26,11 @@ public class ScoreManager {
         scoreOb.setUserName(userName);
         ScoreRepository scoreRepository = new ScoreRepository();
         scoreRepository.addScore(scoreOb);
+    }
+
+    public List<Score> getAllScores(){
+        ScoreRepository scoreRepository = new ScoreRepository();
+
+        return scoreRepository.getAllScore();
     }
 }

@@ -60,6 +60,9 @@ public class MenuFragment extends Fragment {
 
         mIsDualPane = isDualPane(getActivity());
 
+        /** Not yet implemented **/
+        mScoreGoogleButton.setEnabled(false);
+
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
