@@ -33,4 +33,10 @@ public class ScoreManager {
 
         return scoreRepository.getAllScore();
     }
+
+    public int getMaxScore(){
+        ScoreRepository scoreRepository = new ScoreRepository();
+
+        return scoreRepository.getMaxScore();
+    }
 }

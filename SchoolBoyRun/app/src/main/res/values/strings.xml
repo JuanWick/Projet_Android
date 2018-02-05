@@ -20,4 +20,7 @@
     <string name="Changement_langue">Changement de langue</string>
     <string name="Changement_langue_restart">Le changement prendra effet au prochain lancement de l\'application.</string>
     <string name="score_toast">Bravo ! Ton score est de</string>
+    <string name="appwidget_text">Votre score max. à SchoolBoyRun est de </string>
+    <string name="add_widget">Add widget</string>
+    <string name="start">Lancer SchoolBoyRun !</string>
 </resources>

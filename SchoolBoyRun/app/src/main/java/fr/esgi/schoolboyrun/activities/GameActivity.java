@@ -15,6 +15,7 @@ import java.util.TimerTask;
 import java.util.logging.Logger;
 
 import fr.esgi.schoolboyrun.R;
+import fr.esgi.schoolboyrun.helpers.PrefUtil;
 import fr.esgi.schoolboyrun.manager.ScoreManager;
 import fr.esgi.schoolboyrun.manager.UserManager;
 
@@ -55,6 +56,10 @@ public class GameActivity extends AndroidApplication {
 
         scoreManager.saveScore(userManager.getUserName(), score, new Date());
         Toast.makeText(this,getString(R.string.score_toast)+ " " + score + " ! ",Toast.LENGTH_LONG).show();
+
+        /** On enregistre le score max dans les prefs **/
+        PrefUtil.addIntPrefValue(this,"maxScore","maxScore", scoreManager.getMaxScore());
+
         Log.i("[GameActivity]","onPause > score > " + score);
     }
 }

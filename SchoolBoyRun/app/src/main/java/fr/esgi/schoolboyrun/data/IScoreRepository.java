@@ -12,4 +12,5 @@ import fr.esgi.schoolboyrun.models.User;
 public interface IScoreRepository {
         public void addScore(Score score);
         public List<Score> getAllScore();
+        public int getMaxScore();
 }

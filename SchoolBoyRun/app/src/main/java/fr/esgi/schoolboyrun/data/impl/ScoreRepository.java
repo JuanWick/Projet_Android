@@ -42,4 +42,15 @@ public class ScoreRepository implements IScoreRepository{
         Realm realm = Realm.getDefaultInstance();
         return realm.where(Score.class).sort("score", Sort.DESCENDING).findAll();
     }
+
+    @Override
+    public int getMaxScore() {
+        Realm realm = Realm.getDefaultInstance();
+        Integer maxScore = realm.where(Score.class).max("score").intValue();
+        if(null == maxScore){
+            maxScore = 0;
+        }
+        return maxScore;
+    }
+
 }
