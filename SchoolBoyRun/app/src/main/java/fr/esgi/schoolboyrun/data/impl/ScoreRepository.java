@@ -17,8 +17,6 @@ import io.realm.Sort;
 public class ScoreRepository implements IScoreRepository{
     @Override
     public void addScore(Score score) {
-        Log.i("[ScoreRepository]","ADD : "+score.getUserName()+"/"+score.getScore());
-
         Realm realm = Realm.getDefaultInstance();
 
         Number currentIdNum = realm.where(Score.class).max("id");
@@ -34,7 +32,6 @@ public class ScoreRepository implements IScoreRepository{
         realm.copyToRealmOrUpdate(score);
         realm.commitTransaction();
 
-        Log.i("[ScoreRepository]","ADD END");
     }
 
     @Override

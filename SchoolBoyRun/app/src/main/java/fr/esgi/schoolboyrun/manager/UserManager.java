@@ -31,16 +31,12 @@ public class UserManager {
     }
 
     public void init(Activity activity){
-        Log.i("[init]","DEBUT");
         SharedPreferences sharedPreferences = activity.getSharedPreferences("currentUser",MODE_PRIVATE);
         if(-1 != sharedPreferences.getInt("currentUserId",-1)){
-            Log.i("[init]","existe");
             currentUser = new User(sharedPreferences.getInt("currentUserId",-1), sharedPreferences.getString("currentUserName",""));
         } else {
-            Log.i("[init]","nope");
             currentUser = null;
         }
-        Log.i("[init]","FIN");
     }
 
     public boolean checkUserIsSet(){
@@ -61,25 +57,15 @@ public class UserManager {
     }
 
     public void setLastUser(Context context, String name){
-        Log.i("[setLastUser]","DEBUT > "+name);
         User user = new User();
         user.setName(name);
 
         UserRepository userRepository = new UserRepository();
         userRepository.addUser(user);
 
-        Log.i("[setLastUser]","APRES ADD");
-
-
         currentUser = userRepository.getUserByName(name);
-
-        Log.i("[setLastUser]","APRES RECUP : " + currentUser.getName());
-
 
         PrefUtil.addStringPrefValue(context, "currentUser", "currentUserName", name);
         PrefUtil.addIntPrefValue(context, "currentUser", "currentUserId", currentUser.getId());
-
-        Log.i("[setLastUser]","FIN");
-
     }
 }

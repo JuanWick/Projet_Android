@@ -73,7 +73,7 @@ public class UserFragment extends Fragment {
         userManager = UserManager.getCurrentUserManager();
 
         if(null != userName && !userName.isEmpty()){
-            mUserNameTxt.setText(GREETING+userName+"!");
+            mUserNameTxt.setText(GREETING+" "+userName+"!");
         } else {
             mUserNameTxt.setText(GREETING+"!");
         }

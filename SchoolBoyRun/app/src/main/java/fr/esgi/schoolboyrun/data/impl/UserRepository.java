@@ -16,8 +16,6 @@ import io.realm.Realm;
 public class UserRepository implements IUserRepository {
     @Override
     public void addUser(User user) {
-        Log.i("[UserRepository]","ADD : "+user.getName());
-
         Realm realm = Realm.getDefaultInstance();
 
         Number currentIdNum = realm.where(User.class).max("id");
@@ -32,8 +30,6 @@ public class UserRepository implements IUserRepository {
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();
-
-        Log.i("[UserRepository]","ADD END");
     }
 
     @Override
@@ -59,8 +55,6 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User getUserById(int id) {
-        Log.i("[UserRepository]","ADD END");
-
         Realm realm = Realm.getDefaultInstance();
         return realm.where(User.class).equalTo("id",id).findFirst();
     }

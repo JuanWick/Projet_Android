@@ -21,4 +21,6 @@
     <string name="appwidget_text">"Le score max. à SchoolBoyRun est de "</string>
     <string name="start">Lancer SchoolBoyRun !</string>
     <string name="sauts">sauts</string>
+    <string name="add_widget">Ajout widget</string>
+
 </resources>

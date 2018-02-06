@@ -31,7 +31,6 @@ public class GameActivity extends AndroidApplication {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("[GameActivity]","onCreate");
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         game = new SchoolBoyRun();
         initialize(game, config);
@@ -59,7 +58,5 @@ public class GameActivity extends AndroidApplication {
 
         /** On enregistre le score max dans les prefs **/
         PrefUtil.addIntPrefValue(this,"maxScore","maxScore", scoreManager.getMaxScore());
-
-        Log.i("[GameActivity]","onPause > score > " + score);
     }
 }

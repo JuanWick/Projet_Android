@@ -34,7 +34,7 @@
         <receiver android:name=".appWidget.SchoolBoyRunAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.developpez.viish.tutos.LANCER_APPLICATION" />
+                <action android:name="fr.esgi.schoolboyrun.LANCER_APPLICATION" />
             </intent-filter>
 
             <meta-data
